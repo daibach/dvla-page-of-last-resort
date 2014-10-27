@@ -1,0 +1,80 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  RewriteCond %{HTTP_HOST}    ^(www.)?taxdisc.service.gov.uk [nc]
+  RewriteCond %{REQUEST_URI}  !^/pages/(.*)$
+  RewriteCond %{REQUEST_URI}  !^/static/(.*)$
+  RewriteRule ^(.*)$          /pages/evl/vehicle-tax.php [nc,l]
+
+  RewriteCond %{HTTP_HOST}    ^(www.)?taxdisc.direct.gov.uk [nc]
+  RewriteCond %{REQUEST_URI}  !^/pages/(.*)$
+  RewriteCond %{REQUEST_URI}  !^/static/(.*)$
+  RewriteRule ^(.*)$          /pages/evl/vehicle-tax.php [nc,l]
+
+  RewriteCond %{HTTP_HOST}    ^(www.)?sorn.service.gov.uk [nc]
+  RewriteCond %{REQUEST_URI}  !^/pages/(.*)$
+  RewriteCond %{REQUEST_URI}  !^/static/(.*)$
+  RewriteRule ^(.*)$          /pages/evl/sorn.php [nc,l]
+
+  RewriteCond %{HTTP_HOST}    ^(www.)?vehicleenquiry.service.gov.uk [nc]
+  RewriteCond %{REQUEST_URI}  !^/pages/(.*)$
+  RewriteCond %{REQUEST_URI}  !^/static/(.*)$
+  RewriteRule ^(.*)$          /pages/evl/vehicle-enquiry.php [nc,l]
+
+  RewriteCond %{HTTP_HOST}    ^emaildvla.direct.gov.uk [nc]
+  RewriteCond %{REQUEST_URI}  !^/pages/(.*)$
+  RewriteCond %{REQUEST_URI}  !^/static/(.*)$
+  RewriteRule ^(.*)$          /pages/email-dvla.php [nc,l]
+
+  RewriteCond %{HTTP_HOST}    ^secure.dvlaregistrations.direct.gov.uk [nc]
+  RewriteCond %{REQUEST_URI}  !^/pages/(.*)$
+  RewriteCond %{REQUEST_URI}  !^/static/(.*)$
+  RewriteRule ^(.*)$          /pages/som-account.php [nc,l]
+
+  RewriteCond %{HTTP_HOST}    ^motoring.direct.gov.uk [nc]
+  RewriteCond %{QUERY_STRING} _pageLabel=FAP [nc]
+  RewriteCond %{REQUEST_URI}  !^/pages/(.*)$
+  RewriteCond %{REQUEST_URI}  !^/static/(.*)$
+  RewriteRule ^(.*)$          /pages/dlo/apply-first-licence.php [nc,l]
+
+  RewriteCond %{HTTP_HOST}    ^motoring.direct.gov.uk [nc]
+  RewriteCond %{QUERY_STRING} _pageLabel=COA [nc]
+  RewriteCond %{REQUEST_URI}  !^/pages/(.*)$
+  RewriteCond %{REQUEST_URI}  !^/static/(.*)$
+  RewriteRule ^(.*)$          /pages/dlo/change-address.php [nc,l]
+
+  RewriteCond %{HTTP_HOST}    ^motoring.direct.gov.uk [nc]
+  RewriteCond %{QUERY_STRING} _pageLabel=PRN [nc]
+  RewriteCond %{REQUEST_URI}  !^/pages/(.*)$
+  RewriteCond %{REQUEST_URI}  !^/static/(.*)$
+  RewriteRule ^(.*)$          /pages/dlo/change-photo.php [nc,l]
+
+  RewriteCond %{HTTP_HOST}    ^motoring.direct.gov.uk [nc]
+  RewriteCond %{QUERY_STRING} _pageLabel=PTP [nc]
+  RewriteCond %{REQUEST_URI}  !^/pages/(.*)$
+  RewriteCond %{REQUEST_URI}  !^/static/(.*)$
+  RewriteRule ^(.*)$          /pages/dlo/exchange-paper.php [nc,l]
+
+  RewriteCond %{HTTP_HOST}    ^motoring.direct.gov.uk [nc]
+  RewriteCond %{QUERY_STRING} _pageLabel=RE7 [nc]
+  RewriteCond %{REQUEST_URI}  !^/pages/(.*)$
+  RewriteCond %{REQUEST_URI}  !^/static/(.*)$
+  RewriteRule ^(.*)$          /pages/dlo/renew-at-70.php [nc,l]
+
+  RewriteCond %{HTTP_HOST}    ^motoring.direct.gov.uk [nc]
+  RewriteCond %{QUERY_STRING} _pageLabel=DUP [nc]
+  RewriteCond %{REQUEST_URI}  !^/pages/(.*)$
+  RewriteCond %{REQUEST_URI}  !^/static/(.*)$
+  RewriteRule ^(.*)$          /pages/dlo/replace-licence.php [nc,l]
+
+  RewriteCond %{HTTP_HOST}    ^motoring.direct.gov.uk [nc]
+  RewriteCond %{QUERY_STRING} _pageLabel=VMA [nc]
+  RewriteCond %{REQUEST_URI}  !^/pages/(.*)$
+  RewriteCond %{REQUEST_URI}  !^/static/(.*)$
+  RewriteRule ^(.*)$          /pages/dlo/track-licence.php [nc,l]
+
+  RewriteCond %{REQUEST_URI}  !^/pages/(.*)$
+  RewriteCond %{REQUEST_URI}  !^/static/(.*)$
+  RewriteRule ^(.*)$          /pages/default.php [nc,l]
+</IfModule>
